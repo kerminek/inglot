@@ -1,0 +1,30 @@
+---
+import ReactiveColors from "./ReactiveColors";
+const colors = Astro.props.colors;
+---
+
+<div class="w-full h-20 my-2 sm:my-0 sm:w-28 sm:h-full order-first sm:order-last">
+  <div
+    id="colorsScroll"
+    class="overflow-x-scroll sm:overflow-y-scroll sm:overscroll-y-contain h-full relative flex items-center sm:block"
+  >
+    <div class="absolute">
+      <div class="flex sm:flex-col gap-8 sm:py-4 w-full items-center pl-5 h-full">
+        <ReactiveColors client:load colors={colors} />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  #colorsScroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  #colorsScroll {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+import FooterLink from "./FooterLink.astro";
+import footerData from "../assets/footerData.json";
+// SVG Icons
+import FacebookIcon from "./socialIcons/facebook.astro";
+import InstagramIcon from "./socialIcons/instagram.astro";
+import LinkedinIcon from "./socialIcons/linkedin.astro";
+import PageIcon from "./socialIcons/page.astro";
+import PinterestIcon from "./socialIcons/pinterest.astro";
+import YoutubeIcon from "./socialIcons/youtube.astro";
+---
+
+<footer class="bg-white px-4 sm:px-6 lg:px-20 pt-20 pb-20">
+  <div class="flex justify-around py-10 border-t-2">
+    <InstagramIcon />
+    <FacebookIcon />
+    <YoutubeIcon />
+    <PinterestIcon />
+    <LinkedinIcon />
+    <PageIcon />
+  </div>
+  <div
+    class="container flex flex-col sm:flex-row justify-around tracking-tighter md:justify-between gap-14 mx-auto whitespace-nowrap text-center flex-wrap"
+  >
+    <section class="flex-grow flex flex-col gap-4">
+      <h2 class="font-semibold">Newsletter</h2>
+      <p class="tracking-normal whitespace-normal">Jako pierwszy otrzymuj informacje o nowościach i wyprzedażach!</p>
+      <form class="border mx-auto flex w-full sm:max-w-md border-black focus-within:scale-105 transition duration-500">
+        <input
+          class="outline-none p-2 text-sm sm:pl-4 w-full sm:min-w-[350px]"
+          type="email"
+          placeholder="Adres Email"
+        />
+        <button class="p-2 px-4 font-semibold text-white bg-black" type="submit">Dołącz</button>
+      </form>
+    </section>
+
+    <div class="flex flex-col sm:flex-row gap-14 justify-around w-full flex-wrap">
+      <section>
+        <h2 class="font-semibold mb-4">Informacje</h2>
+        <div class="text-sm text-zinc-700 flex sm:gap-10 flex-wrap flex-col md:flex-row">
+          <div class="flex flex-col items-center sm:items-start">
+            {footerData.informacje.slice(0, 4).map(({ name, href }) => <FooterLink {href}>{name}</FooterLink>)}
+          </div>
+          <div class="flex flex-col items-center sm:items-start">
+            {footerData.informacje.slice(4, 8).map(({ name, href }) => <FooterLink {href}>{name}</FooterLink>)}
+          </div>
+          <div class="flex flex-col items-center sm:items-start">
+            {footerData.informacje.slice(8).map(({ name, href }) => <FooterLink {href}>{name}</FooterLink>)}
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="font-semibold mb-4">Inglot</h2>
+        <div class="text-sm text-zinc-700">
+          <p class="py-2">INGLOT SP. Z O.O.</p>
+          <p class="py-2">ul. Lwowska 154</p>
+          <p class="py-2">37-700 Przemyśl</p>
+          <FooterLink href="mailto:kontakt@inglot.pl">kontakt@inglot.pl</FooterLink>
+        </div>
+      </section>
+    </div>
+  </div>
+</footer>

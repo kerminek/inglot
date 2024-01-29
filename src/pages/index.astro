@@ -1,0 +1,12 @@
+---
+import HeroSection from "../components/HeroSection.astro";
+import MainSection from "../components/MainSectionV2.astro";
+import WelcomeInfo from "../components/solidjs/WelcomeInfo.jsx";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Main Page">
+  <WelcomeInfo client:only="solid-js" />
+  <HeroSection />
+  <MainSection />
+</Layout>

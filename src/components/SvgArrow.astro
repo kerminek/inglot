@@ -1,0 +1,37 @@
+<svg
+  width="150px"
+  height="150px"
+  viewBox="0 0 400 400"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  style="filter: drop-shadow(-5px 15px 4px rgba(0, 0, 0, 0.3));"
+  class="stroke-black translate-x-10"
+>
+  <path
+    d="M56 270.5C56 256.429 79.5553 218.859 120.902 197.186C162.249 175.512 194.07 164.5 242.113 164.5C274.142 164.5 306.771 175.395 340 197.186"
+    stroke-opacity="0.9"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-dasharray="16 32"></path>
+  <path
+    d="M325.63 129C337.877 172.588 344 195.072 344 196.45C344 198.518 308.436 212.998 292 235"
+    stroke-opacity="0.9"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+</svg>
+
+<style>
+  path:first-child {
+    stroke-dasharray: 16 32;
+    stroke-dashoffset: 96;
+    animation: dash 3s linear forwards infinite;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>

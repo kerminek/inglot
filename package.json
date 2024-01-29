@@ -1,0 +1,27 @@
+{
+  "name": "@example/minimal",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/node": "^6.0.0",
+    "@astrojs/solid-js": "^3.0.1",
+    "@astrojs/tailwind": "^5.0.0",
+    "astro": "^3.0.13",
+    "sharp": "^0.32.5",
+    "solid": "^0.2.1",
+    "solid-js": "^1.7.11",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

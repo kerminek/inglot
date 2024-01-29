@@ -1,0 +1,28 @@
+---
+import GridItem from "./GridItemV2.astro";
+
+const { sectionName, items } = Astro.props;
+const isDebug = false;
+---
+
+<div class=`${isDebug&&"border border-purple-400"} w-full gap-5 lg:pr-16 bg-white sm:py-0`>
+  <div class="w-full lg:hidden bg-white text-5xl capitalize z-20 py-3 pl-5 mt-8">
+    <a href="">{sectionName} &rsaquo;</a>
+  </div>
+  <div class=`${isDebug&&"border border-emerald-400"} sm:px-4 lg:px-8 lg:gap-16 xl:gap-20 flex`>
+    <div
+      class="py-10 hidden lg:block rotate-180 w-0 lg:text-6xl xl:text-7xl tracking-normal font-extralight whitespace-nowrap text-center"
+      style={{ writingMode: "vertical-rl" }}
+    >
+      {sectionName}
+    </div>
+    <div class="mx-auto flex justify-center w-full z-10">
+      <div
+        class="grid grid-flow-col sm:grid-flow-row overflow-x-scroll snap-x snap-mandatory snap-always sm:overflow-x-visible sm:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-4 text-sm font-normal text-center w-full px-2 py-6 sm:px-0"
+      >
+        {items.map((item, idx) => <GridItem {item} isTall={idx === 0} />)}
+        <GridItem next={true} isWide={true} />
+      </div>
+    </div>
+  </div>
+</div>

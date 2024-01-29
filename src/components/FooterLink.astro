@@ -1,0 +1,7 @@
+---
+const href = Astro.props.href;
+---
+
+<button class="w-fit hover:underline hover:text-black">
+  <a class="my-2 inline-block" {href}><slot /></a>
+</button>

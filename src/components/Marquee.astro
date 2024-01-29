@@ -1,0 +1,59 @@
+---
+---
+
+<section id="marquee" class="overflow-hidden text-center font-medium text-white z-50 cursor-pointer">
+  <div class="flex flex-row">
+    <div class="flex items-center justify-center w-full p-2 px-8 bg-pink-400 flex-shrink-0">
+      KREMOWE PRODUKTY DO KONTUROWANIA INGLOT WITH KOMUNIKATYWNIE JUŻ W SPRZEDAŻY!
+    </div>
+    <div class="flex items-center justify-center w-full p-2 px-8 bg-orange-500 flex-shrink-0">
+      -20% na cały nieprzeceniony asortyment przy zakupach za min. 39 zł | Kod online: SCHOOL20 | 26.08-04.09.2023 r. |
+      Promocje nie łączą się.
+    </div>
+    <div class="flex items-center justify-center w-full p-2 px-8 bg-violet-500 flex-shrink-0">
+      DARMOWA WYSYŁKA OD 119 ZŁ | DOSTAWA W CIĄGU 2 DNI | PRÓBKI W PREZENCIE DO KAŻDEGO ZAMÓWIENIA
+    </div>
+    <div class="flex items-center justify-center w-full p-2 px-8 bg-pink-400 flex-shrink-0">
+      KREMOWE PRODUKTY DO KONTUROWANIA INGLOT WITH KOMUNIKATYWNIE JUŻ W SPRZEDAŻY!
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    28% {
+      transform: translateX(0%);
+    }
+    33% {
+      transform: translateX(-100%);
+    }
+    61% {
+      transform: translateX(-100%);
+    }
+    66% {
+      transform: translateX(-200%);
+    }
+    94% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+  }
+  section > div:first-child {
+    animation: marquee 14s linear infinite forwards;
+  }
+  section > div:first-child > div:first-child {
+    -webkit-transform: translateZ(0);
+  }
+</style>
+
+<script>
+  const marqueeElement = document.getElementById("marquee");
+  const firstElementChild = marqueeElement.firstElementChild as HTMLElement;
+  marqueeElement.addEventListener("mouseenter", () => (firstElementChild.style.animationPlayState = "paused"));
+  marqueeElement.addEventListener("mouseleave", () => (firstElementChild.style.animationPlayState = "running"));
+</script>

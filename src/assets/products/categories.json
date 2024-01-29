@@ -1,0 +1,221 @@
+[
+  {
+    "categoryId": "makijaz",
+    "categoryName": "makijaż",
+    "categoryImage": "https://inglot.pl/img/c/107-0_thumb.jpg",
+    "items": [
+      {
+        "subCategoryId": "usta",
+        "subCategoryName": "usta",
+        "items": [
+          { "name": "bazy", "href": "/" },
+          { "name": "pomadki", "href": "/" },
+          { "name": "pomadki w płynie", "href": "/" },
+          { "name": "błyszczyki", "href": "/" },
+          { "name": "konturówki", "href": "/" },
+          { "name": "pielęgnacja", "href": "/" },
+          { "name": "freedom system", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "oczy",
+        "subCategoryName": "oczy",
+        "items": [
+          { "name": "bazy", "href": "/" },
+          { "name": "cienie do powiek", "href": "/" },
+          { "name": "pigmenty", "href": "/" },
+          { "name": "ozdoby do ciała", "href": "/" },
+          { "name": "eyelinery", "href": "/" },
+          { "name": "tusze do rzęs", "href": "/" },
+          { "name": "akcesoria", "href": "/" },
+          { "name": "freedom system", "href": "/" },
+          { "name": "palety cieni do powiek", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "brwi",
+        "subCategoryName": "brwi",
+        "items": [
+          { "name": "makijaż brwi", "href": "/" },
+          { "name": "akcesoria", "href": "/" },
+          { "name": "freedom system", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "twarz",
+        "subCategoryName": "twarz",
+        "items": [
+          { "name": "bazy", "href": "/" },
+          { "name": "podkłady", "href": "/" },
+          { "name": "korektory", "href": "/" },
+          { "name": "pudry", "href": "/" },
+          { "name": "rozświetlacze", "href": "/" },
+          { "name": "konturowanie", "href": "/" },
+          { "name": "róże", "href": "/" },
+          { "name": "bronzery", "href": "/" },
+          { "name": "mgiełki", "href": "/" },
+          { "name": "freedom system", "href": "/" },
+          { "name": "palety do konturowania twarzy", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "paznokcie",
+        "subCategoryName": "paznokcie",
+        "items": [
+          { "name": "lakiery do paznokci", "href": "/" },
+          { "name": "french manicure", "href": "/" },
+          { "name": "natural origin", "href": "/" },
+          { "name": "o2m", "href": "/" },
+          { "name": "odżywki", "href": "/" },
+          { "name": "bazy i topy", "href": "/" },
+          { "name": "pielęgnacja", "href": "/" },
+          { "name": "ozdoby do paznokci", "href": "/" },
+          { "name": "zmywacze", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "freedom_system",
+        "subCategoryName": "freedom system",
+        "items": [
+          { "name": "palety", "href": "/" },
+          { "name": "cienie do powiek", "href": "/" },
+          { "name": "róże", "href": "/" },
+          { "name": "bronzery", "href": "/" },
+          { "name": "pudry", "href": "/" },
+          { "name": "korektory", "href": "/" },
+          { "name": "rozświetlacze", "href": "/" },
+          { "name": "konturowanie", "href": "/" },
+          { "name": "brwi", "href": "/" },
+          { "name": "pomadki freedom system", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "pedzle_do_makijazu",
+        "subCategoryName": "pędzle do makijażu",
+        "items": [
+          { "name": "pędzle do twarzy", "href": "/" },
+          { "name": "pędzle do oczu", "href": "/" },
+          { "name": "pędzle do ust", "href": "/" },
+          { "name": "pędzle do makijażu playinn", "href": "/" },
+          { "name": "aplikatory", "href": "/" },
+          { "name": "zestawy pędzli", "href": "/" },
+          { "name": "etui i pasy", "href": "/" },
+          { "name": "czyszczenie", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "akcesoria",
+        "subCategoryName": "akcesoria",
+        "items": [
+          { "name": "palety", "href": "/" },
+          { "name": "rzęsy", "href": "/" },
+          { "name": "kosmetyczki", "href": "/" },
+          { "name": "kufry kosmetyczne", "href": "/" },
+          { "name": "organizery", "href": "/" },
+          { "name": "manicure/pedicure", "href": "/" },
+          { "name": "pro", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "kolekcje_specjalne",
+        "subCategoryName": "kolekcje specjalne",
+        "items": [
+          { "name": "inglot playinn summer collection", "href": "/" },
+          { "name": "ethereal", "href": "/" },
+          { "name": "enjoy little things", "href": "/" },
+          { "name": "fall with me", "href": "/" },
+          { "name": "inglot playinn julia kostera", "href": "/" },
+          { "name": "dream it.", "href": "/" },
+          { "name": "pędzle do makijażu playinn", "href": "/" },
+          { "name": "palety playinn", "href": "/" },
+          { "name": "kiss catcher", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "demakijaz",
+        "subCategoryName": "demakijaż",
+        "items": [
+          { "name": "płyny do demakijażu", "href": "/" },
+          { "name": "chusteczki do demakijażu", "href": "/" },
+          { "name": "toniki do twarzy", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "the_most_loved",
+        "subCategoryName": "the most loved",
+        "items": []
+      },
+      {
+        "subCategoryId": "travel_size",
+        "subCategoryName": "travel size",
+        "items": []
+      }
+    ]
+  },
+  {
+    "categoryId": "pielegnacja",
+    "categoryName": "pielęgnacja",
+    "categoryImage": "https://inglot.pl/img/c/108-0_thumb.jpg",
+    "items": [
+      {
+        "subCategoryId": "inglot_lab",
+        "subCategoryName": "inglot lab",
+        "items": [
+          { "name": "kremy", "href": "/" },
+          { "name": "serum", "href": "/" },
+          { "name": "olejki", "href": "/" },
+          { "name": "demakijaż", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "demakijaz",
+        "subCategoryName": "demakijaż",
+        "items": [
+          { "name": "płyny do demakijażu", "href": "/" },
+          { "name": "chusteczki do demakijażu", "href": "/" },
+          { "name": "toniki do twarzy", "href": "/" }
+        ]
+      },
+      {
+        "subCategoryId": "travel_size",
+        "subCategoryName": "travel size",
+        "items": []
+      }
+    ]
+  },
+  {
+    "categoryId": "zestawy",
+    "categoryName": "zestawy",
+    "items": []
+  },
+  {
+    "categoryId": "promocje",
+    "categoryName": "promocje",
+    "items": []
+  },
+  {
+    "categoryId": "nowosci",
+    "categoryName": "nowości",
+    "items": []
+  },
+  {
+    "categoryId": "inglot_playinn",
+    "categoryName": "inglot playinn",
+    "items": []
+  },
+  {
+    "categoryId": "usluga_makijazu",
+    "categoryName": "usługa makijażu",
+    "items": []
+  },
+  {
+    "categoryId": "blog",
+    "categoryName": "blog",
+    "items": []
+  },
+  {
+    "categoryId": "o_nas",
+    "categoryName": "o nas",
+    "items": []
+  }
+]

@@ -1,0 +1,15 @@
+---
+export const prerender = false;
+//
+import Layout from "../../layouts/Layout.astro";
+import ProductSection from "../../components/productPage/ProductSection.astro";
+import SeeMore from "../../components/productPage/SeeMore.astro";
+---
+
+<Layout title="Product Page">
+  <div class="px-4">
+    <ProductSection />
+    <!--  -->
+    <SeeMore />
+  </div>
+</Layout>

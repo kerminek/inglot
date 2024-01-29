@@ -1,0 +1,18 @@
+---
+import itemsData from "../assets/products/categoryProducts.json";
+import GridSection from "./GridSectionV2.astro";
+import SeasonalSection from "./SeasonalSection.astro";
+const isDebug = false;
+---
+
+<div class=`${isDebug&&"border border-green-400"} flex flex-col z-10`>
+  <div class="h-24 bg-gradient-to-b from-transparent to-white"></div>
+  {itemsData.slice(0, 2).map((section) => <GridSection sectionName={section.category} items={section.items} />)}
+  <div class="relative">
+    <div class="h-20 bg-white md:bg-inherit bg-gradient-to-t from-transparent to-white md:absolute w-full"></div>
+  </div>
+  <!-- blog section -->
+  <SeasonalSection />
+  <div class="h-20 bg-white md:bg-inherit md:bg-gradient-to-b from-transparent to-white"></div>
+  {itemsData.slice(2).map((section) => <GridSection sectionName={section.category} items={section.items} />)}
+</div>

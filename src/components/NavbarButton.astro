@@ -1,0 +1,77 @@
+---
+const { categoryName, categoryImage, items, categoryId } = Astro.props.category;
+const { index } = Astro.props;
+---
+
+<!-- First Layer -->
+<button
+  class:list={["navButton group lg:flex-1 uppercase whitespace-nowrap bg-white text-zinc-700 w-full lg:w-auto"]}
+  id={`navButton_${categoryId}`}
+>
+  <div
+    class="categoryButton py-2 pl-14 lg:pl-0 -z-50 text-3xl lg:text-sm font-semibold lg:font-light capitalize text-left lg:text-center lg:hidden w-full transition -translate-y-5 duration-300 opacity-0"
+    style={{ transitionDelay: `calc(${index} * 30ms + 250ms)` }}
+    id={`button_${categoryId}`}
+    role="button"
+  >
+    <h3 class="navButtonName delay-100 transition duration-300">{categoryName}</h3>
+  </div>
+  <div
+    class="py-2 lg:px-3 xl:px-6 z-50 text-3xl lg:text-sm font-semibold lg:font-light capitalize text-left lg:text-center hidden lg:block"
+  >
+    <h3 class="group-hover:text-zinc-900 transition duration-300">{categoryName}</h3>
+  </div>
+  <!-- Second Layer -->
+  <!-- style={{ transitionDuration: `calc((100 + max(50 * ${items.length}, 500))*1ms)` }} -->
+  {
+    items.length > 0 && (
+      <div
+        class="subCategories bg-transparent h-full lg:h-[calc(var(--curr-H,_0)_*_1px)] w-full z-50 lg:-z-30 lg:group-hover:z-10 lg:pointer-events-none
+         lg:group-hover:pointer-events-auto transition-opacity duration-300 lg:transition-[height,visibility] lg:duration-[600ms] lg:group-hover:delay-100 absolute left-0 top-0
+          lg:top-[100%] flex flex-col overflow-hidden invisible opacity-0 lg:opacity-100 lg:group-hover:visible cursor-default"
+      >
+        <div class="bg-white capitalize">
+          <div class="lg:container mx-auto">
+            <div class="w-full lg:w-fit relative lg:p-3 lg:pr-0 lg:pb-16 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity lg:group-hover:delay-200">
+              <div
+                id={`movableSubCategory_${categoryId}`}
+                class="movableSubCategory transition duration-300 translate-x-10 lg:translate-x-0"
+              >
+                {items.map((item, index) => (
+                  <div
+                    id={`subCategory_${categoryId}-${item.subCategoryId}`}
+                    class="min-w-[220px] flex group/sub text-start transition cursor-pointer py-2 lg:pr-10 pl-14 lg:pl-0 w-full lg:w-auto"
+                  >
+                    <div class="subCategoryButton delay-100 lg:-translate-y-5 lg:group-hover/blur:translate-y-0 lg:delay-100 lg:group-hover:delay-200 transition-all duration-300 lg:duration-200 lg:group-hover:duration-300 w-full">
+                      <div
+                        class="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition"
+                        style={{
+                          transitionDelay: `calc((var(--curr-Delay, 0) * (300 + (${30 * index}))*1ms)`,
+                        }}
+                      >
+                        <p class="text-3xl lg:text-xl font-semibold lg:font-medium lg:group-hover/sub:translate-x-4 transition ease-out lg:group-hover/sub:text-zinc-900">
+                          {item.subCategoryName}
+                        </p>
+                      </div>
+                    </div>
+                    {item.items.length > 0 && (
+                      <div class="bg-white transition-all lg:transition-none duration-300 translate-x-10 lg:translate-x-0 opacity-0 lg:opacity-100 invisible lg:group-hover/sub:visible cursor-default flex flex-col absolute left-0 top-0 lg:left-full w-full lg:w-auto h-full z-10 lg:pr-4">
+                        {item.items.map((subItem) => (
+                          <div class="w-full group/subItem cursor-pointer p-2 pl-14 lg:pl-2 transition">
+                            <p class="text-3xl lg:text-base font-semibold lg:font-normal lg:group-hover/subItem:translate-x-4 transition ease-out lg:group-hover/subItem:text-zinc-900">
+                              {subItem.name}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+</button>
