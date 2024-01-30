@@ -14,6 +14,7 @@
     "@astrojs/node": "^6.0.0",
     "@astrojs/solid-js": "^3.0.1",
     "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/vercel": "^7.0.2",
     "astro": "^3.0.13",
     "sharp": "^0.32.5",
     "solid": "^0.2.1",
