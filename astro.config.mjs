@@ -21,5 +21,5 @@ export default defineConfig({
   // site: IS_DEV ? undefined : "https://www.jakubkrwawicz.pl",
   // base: IS_DEV ? undefined : "/portfolio-apps/inglot",
   // site: "http://localhost:4321",
-  base: "/portfolio-apps/inglot",
+  // base: "/portfolio-apps/inglot",
 });
