@@ -10,7 +10,7 @@ const colors = Astro.props.colors;
   >
     <div class="absolute">
       <div class="flex sm:flex-col gap-8 sm:py-4 w-full items-center pl-5 h-full">
-        <ReactiveColors client:load colors={colors} />
+        <ReactiveColors client:only colors={colors} />
       </div>
     </div>
   </div>
