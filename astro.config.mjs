@@ -7,8 +7,8 @@ import vercel from "@astrojs/vercel/serverless";
 
 import solidJs from "@astrojs/solid-js";
 
-// const IS_DEV = process.env.NODE_ENV === "development";
-// console.log({ IS_DEV });
+const IS_DEV = process.env.NODE_ENV === "development";
+console.log({ IS_DEV });
 
 // https://astro.build/config
 export default defineConfig({
