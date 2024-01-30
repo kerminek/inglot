@@ -64,13 +64,13 @@ const Header = () => {
         {/* <!-- upper header --> */}
         <div class="border-b p-3 px-4 md:py-3 flex items-center justify-center relative z-50 bg-white">
           <div class="lg:absolute h-6 flex items-center">
-            <a href="/">
+            <a href="/portfolio-apps/inglot">
               <img
                 id="logo"
                 class={
                   "h-3 transition-[visibility,opacity] duration-500 " + (store.hamburgerState && "invisible opacity-0")
                 }
-                src="/logo.svg"
+                src="/portfolio-apps/inglot/logo.svg"
                 alt="Logo"
               />
             </a>
