@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets";
+import { BASE_URL } from "../store";
 const { item, clamp = "4", isWide = false, isTall = false, next = false, horizontal = false } = Astro.props;
 ---
 
 <a
-  href={next ? "" : "/product/" + item?.productId}
+  href={next ? "" : BASE_URL + "/product/" + item?.productId}
   class="inline-flex select-none"
   class:list={[{ "lg:row-span-2": isTall, "lg:col-span-2 gap-0": isWide }]}
   style={{ "-webkit-tap-highlight-color": "transparent" }}
