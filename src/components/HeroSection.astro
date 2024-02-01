@@ -1,18 +1,12 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from "../images/78.jpg";
+import heroImage from "../assets/78.jpg";
 // const heroImage = "https://inglotitaly.com/img/blog-post/78.jpg";
 ---
 
 <!-- <Image src={heroImage} alt="Hero section" class="h-full w-full object-cover top-0 left-0 fixed -z-10" /> -->
 <div class="h-screen w-full 2xl:px-0.5 overflow-hidden">
   <div class="h-screen w-full top-0 left-0 xl:top-10 fixed -z-10">
-    <Image
-      src={heroImage}
-      width={2880}
-      height={1920}
-      alt="Hero section"
-      class="h-full w-full object-cover mx-auto 2xl:container"
-    />
+    <Image src={heroImage} alt="Hero section" class="h-full w-full object-cover mx-auto 2xl:container" />
   </div>
 </div>
