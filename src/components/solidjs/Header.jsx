@@ -1,4 +1,4 @@
-import { basketStore, navbarStore } from "../../store";
+import { BASE_URL, basketStore, navbarStore } from "../../store";
 import categories from "../../assets/products/categories.json";
 import NavbarButton from "./NavbarButton";
 import { createMemo, createSignal } from "solid-js";
@@ -64,13 +64,13 @@ const Header = () => {
         {/* <!-- upper header --> */}
         <div class="border-b p-3 px-4 md:py-3 flex items-center justify-center relative z-50 bg-white">
           <div class="lg:absolute h-6 flex items-center">
-            <a href="/">
+            <a href={BASE_URL}>
               <img
                 id="logo"
                 class={
                   "h-3 transition-[visibility,opacity] duration-500 " + (store.hamburgerState && "invisible opacity-0")
                 }
-                src="/logo.svg"
+                src={BASE_URL + "/logo.svg"}
                 alt="Logo"
               />
             </a>
