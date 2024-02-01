@@ -31,4 +31,3 @@ export const handleQuantityInBasket = (product, add, variant) => {
 };
 
 export { navbarStore, colorStore, basketStore, welcomeInfoStatus };
-export const BASE_URL = import.meta.env.BASE_URL;
