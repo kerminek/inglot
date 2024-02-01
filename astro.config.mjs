@@ -14,5 +14,4 @@ export default defineConfig({
   image: {
     domains: ["inglot.pl"],
   },
-  base: "/portfolio-apps/inglot",
 });

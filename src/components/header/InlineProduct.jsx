@@ -1,4 +1,4 @@
-import { BASE_URL, handleQuantityInBasket } from "../../store";
+import { handleQuantityInBasket } from "../../store";
 
 const InlineProduct = ({ item, isSearchRes = true }) => {
   return (
@@ -98,7 +98,7 @@ const InlineProduct = ({ item, isSearchRes = true }) => {
 const WrapperTag = ({ children, isLink, item, ...props }) => {
   if (isLink)
     return (
-      <a {...props} href={BASE_URL + "/product/" + item?.productId}>
+      <a {...props} href={"/product/" + item?.productId}>
         {children}
       </a>
     );
