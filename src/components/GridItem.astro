@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import { BASE_URL } from "../store";
+const { item, next = false, idx } = Astro.props;
+---
+
+<a
+  href={next ? "" : BASE_URL + "/product/" + item?.productId}
+  class="inline-flex select-none"
+  style={{ "-webkit-tap-highlight-color": "transparent" }}
+>
+  <article
+    class="gridItem shadow-lg flex flex-col rounded-xl p-4 w-64 gap-8 hover:scale-[1.02] hover:shadow-xl transition-all duration-500 snap-center"
+    style={{
+      translate: `0 25%`,
+      opacity: "0%",
+      transition: `translate 1s ${idx * 40}ms, opacity 1s ${idx * 40}ms, transform 0.5s, box-shadow 0.5s`,
+      transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+    }}
+  >
+    <div class="flex-1 flex-grow-0">
+      <Image
+        src={item.image}
+        alt={item.name}
+        height={250}
+        width={250}
+        class="object-scale-down h-full w-full pointer-events-none"
+      />
+    </div>
+    <div class="flex gap-2 items-center mx-auto min-h-4">
+      {
+        item.colors
+          .slice(0, 3)
+          .map(({ color }) => <div class="h-4 w-4 rounded-full shadow-md" style={{ backgroundColor: color }} />)
+      }
+      {item.colors.length > 3 && <span class="text-xs">+{item.colors.length - 3}</span>}
+    </div>
+    <div class="flex-grow-0 text-left justify-self-end h-full flex flex-col justify-between gap-2">
+      <h3 class="text-base font-semibold line-clamp-2">{item.name}</h3>
+      <div class="font-light">
+        <!-- {item.price} zł -->
+        {item.price !== item.regularPrice && <span class="line-through">{item.regularPrice} zł</span>}{" "}
+        <span class:list={{ "text-red-600": item.price !== item.regularPrice }}>{item.price} zł</span>
+      </div>
+    </div>
+  </article>
+</a>

@@ -1,15 +1,16 @@
 ---
 export const prerender = false;
+
+import itemsData from "../../assets/products/categoryProducts.json";
 //
 import Layout from "../../layouts/Layout.astro";
 import ProductSection from "../../components/productPage/ProductSection.astro";
-import SeeMore from "../../components/productPage/SeeMore.astro";
+import GridSectionV2 from "../../components/GridSection.astro";
 ---
 
 <Layout title="Product Page">
-  <div class="px-4">
+  <div class="">
     <ProductSection />
-    <!--  -->
-    <SeeMore />
+    <GridSectionV2 sectionName="Propozycje" items={itemsData[0].items} isMore={true} />
   </div>
 </Layout>

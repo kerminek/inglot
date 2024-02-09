@@ -3,13 +3,43 @@ import ReactiveColors from "./ReactiveColors";
 const colors = Astro.props.colors;
 ---
 
-<div class="w-full h-20 my-2 sm:my-0 sm:w-28 sm:h-full order-first sm:order-last">
+<div
+  class="w-full h-20 my-2 sm:my-0 sm:w-28 sm:h-full order-first sm:order-last relative flex flex-col group/colors select-none"
+>
+  <div
+    class="flex items-center absolute left-0 sm:top-0 z-10 pointer-events-none h-full sm:h-auto sm:w-full backdrop-blur-md group-active/colors:invisible group-active/colors:opacity-0 group-hover/colors:invisible group-hover/colors:opacity-0 transition-all duration-150 sm:duration-300"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="#525252"
+      class="w-6 h-6 sm:w-8 sm:h-8 mx-auto -rotate-90 sm:rotate-0"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"></path>
+    </svg>
+  </div>
+  <div
+    class="flex items-center absolute right-0 sm:bottom-0 z-10 pointer-events-none h-full sm:h-auto sm:w-full backdrop-blur-md group-active/colors:invisible group-active/colors:opacity-0 group-hover/colors:invisible group-hover/colors:opacity-0 transition-all duration-150 sm:duration-300"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="#525252"
+      class="w-6 h-6 sm:w-8 sm:h-8 mx-auto -rotate-90 sm:rotate-0"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+    </svg>
+  </div>
   <div
     id="colorsScroll"
-    class="overflow-x-scroll sm:overflow-y-scroll sm:overscroll-y-contain h-full relative flex items-center sm:block"
+    class="overflow-x-scroll sm:overflow-y-scroll sm:overscroll-y-contain h-full w-full relative flex items-center sm:block"
   >
     <div class="absolute">
-      <div class="flex sm:flex-col gap-8 sm:py-4 w-full items-center pl-5 h-full">
+      <div class="flex sm:flex-col gap-8 sm:py-10 w-full items-center px-10 sm:pl-5 sm:pr-0 h-full">
         <ReactiveColors client:only colors={colors} />
       </div>
     </div>

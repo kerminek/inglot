@@ -1,0 +1,36 @@
+---
+const { side } = Astro.props;
+---
+
+<button
+  data-hor-scroll-button={side}
+  class={`hidden sm:flex
+  absolute z-50 group/scrollButton hover:bg-black/40 items-center content-center justify-center rounded-full -translate-y-8 h-14 w-14 py-3 bg-black/15 invisible opacity-0 group-hover/scroll:visible group-hover/scroll:opacity-100 scale-90 group-hover/scroll:scale-100 transition-all duration-500 ` +
+    (side === "left" ? "left-0" : "right-0")}
+>
+  {
+    side === "left" ? (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 pointer-events-none transition duration-300 group-hover/scrollButton:text-white"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>
+    ) : (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 pointer-events-none transition duration-300 group-hover/scrollButton:text-white"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+    )
+  }
+</button>

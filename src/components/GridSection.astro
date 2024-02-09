@@ -1,0 +1,121 @@
+---
+import GridItem from "./GridItem.astro";
+import ScrollButton from "./ScrollButton.astro";
+
+const { sectionName, items, isMore } = Astro.props;
+const isDebug = false;
+---
+
+<div class={`w-full gap-5 ${!isMore && "lg:pr-16"} bg-white sm:py-0`}>
+  <div
+    class={`w-full lg:hidden bg-white text-5xl capitalize z-20 py-3 pl-5 mt-8`}
+    style={{ display: isMore && "block" }}
+  >
+    <a href="">{sectionName} &rsaquo;</a>
+  </div>
+  <div class=`${isDebug&&"border border-emerald-400"} sm:px-4 lg:px-8 lg:gap-16 xl:gap-20 flex`>
+    {
+      !isMore && (
+        <div
+          class="py-10 hidden lg:block rotate-180 w-0 lg:text-6xl xl:text-7xl tracking-normal font-extralight whitespace-nowrap text-center"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          {sectionName}
+        </div>
+      )
+    }
+    <div class="mx-auto flex justify-center w-full z-10 relative items-center group/scroll">
+      <ScrollButton side={"left"} />
+      <div
+        class="noScrollbar scroll-smooth flex overflow-x-scroll overflow-y-hidden overscroll-x-contain snap-x snap-mandatory snap-always gap-4 text-sm font-normal text-center w-full px-2 pt-2 pb-10 pr-10"
+      >
+        {items.map((item, idx) => <GridItem {item} {idx} />)}
+      </div>
+      <ScrollButton side={"right"} />
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .noScrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .noScrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const tiles = entry.target.querySelectorAll(".gridItem");
+
+          if (entry.isIntersecting) {
+            tiles.forEach((item: HTMLElement) => ((item.style.translate = "0"), (item.style.opacity = "100%")));
+            return;
+          }
+
+          // tiles.forEach((item: HTMLElement, idx) => ((item.style.translate = `0 25%`), (item.style.opacity = "0%")));
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const containers = document.querySelectorAll(".noScrollbar");
+    containers.forEach((item) => observer.observe(item));
+
+    //
+
+    containers.forEach((scrollElement) => {
+      // we have to set another listener on scroll and then remove or add buttons
+      const buttons = scrollElement.parentElement.querySelectorAll("[data-hor-scroll-button]");
+      const handleClick = (e) => {
+        const { clientWidth } = scrollElement;
+        const side = e.target.dataset?.horScrollButton;
+        if (!side) return;
+
+        const addition = side === "left" ? -(clientWidth * 0.6) : clientWidth * 0.6;
+        const afterAddition = scrollElement.scrollLeft + addition;
+        scrollElement.scrollLeft = afterAddition;
+      };
+
+      const handleScroll = () => {
+        const { clientWidth, scrollLeft, scrollWidth } = scrollElement;
+
+        if (clientWidth + scrollLeft <= clientWidth) {
+          buttons[0].classList.remove(
+            "group-hover/scroll:visible",
+            "group-hover/scroll:opacity-100",
+            "group-hover/scroll:scale-100"
+          );
+        } else
+          buttons[0].classList.add(
+            "group-hover/scroll:visible",
+            "group-hover/scroll:opacity-100",
+            "group-hover/scroll:scale-100"
+          );
+        if (clientWidth + scrollLeft >= scrollWidth) {
+          buttons[1].classList.remove(
+            "group-hover/scroll:visible",
+            "group-hover/scroll:opacity-100",
+            "group-hover/scroll:scale-100"
+          );
+        } else
+          buttons[1].classList.add(
+            "group-hover/scroll:visible",
+            "group-hover/scroll:opacity-100",
+            "group-hover/scroll:scale-100"
+          );
+      };
+      scrollElement.parentElement.addEventListener("click", handleClick);
+      scrollElement.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll();
+    });
+  });
+</script>

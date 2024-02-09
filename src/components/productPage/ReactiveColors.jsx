@@ -1,14 +1,11 @@
 import { colorStore } from "../../store";
-import { For, createEffect } from "solid-js";
+import { For } from "solid-js";
 
 const ReactiveColors = ({ colors }) => {
   const [curColor, colorSet] = colorStore;
 
-  createEffect(() => console.log(curColor()));
-
   return (
     <>
-      {/* {colors.map(({ id, color }) => ( */}
       <For each={colors}>
         {({ id, color }) => (
           <div class="flex flex-col sm:flex-row justify-between w-full gap-1 items-center">
@@ -37,7 +34,6 @@ const ReactiveColors = ({ colors }) => {
           </div>
         )}
       </For>
-      {/* // ))} */}
     </>
   );
 };

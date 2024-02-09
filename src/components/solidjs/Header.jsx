@@ -118,7 +118,10 @@ const Header = () => {
                 />
               </svg>
               {numOfItems() !== 0 && (
-                <div class="absolute -right-3 -bottom-3 w-5 h-5 rounded-full bg-black text-xs font-light text-white flex items-center justify-center">
+                <div
+                  id="basketDot"
+                  class="absolute -right-3 -bottom-3 w-5 h-5 rounded-full bg-black text-xs font-light text-white flex items-center justify-center"
+                >
                   {numOfItems() === 10 ? "+9" : numOfItems()}
                 </div>
               )}
